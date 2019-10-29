@@ -5,7 +5,7 @@
 In this lesson, you will learn the following:
 
 * How dispatching an initial action gives an initial render of the view.
-* How dispatching an initial action gives an initial setup of the store's state.
+* How dispatching an iitial action gives an initial setup of the store's state.
 
 To follow along in this code-along, use the `js/reducer.js` file and update
 according to the Readme. Open `index.html` and try running `dispatch({type:
@@ -195,19 +195,19 @@ undefined.  Then at the bottom the file, we dispatch an action of `'@@INIT'`.
 This calls our `dispatch()` function, and passes it through our initial action.
 `dispatch()` calls the `changeState()` reducer.  `changeState()` is executed, passing
 through two local variables: state and action.  `action` is defined because we
-passed `{ type: '@@INIT' }` into dispatch. `state` is currently **undefined**, so, with 
+passed `{ type: '@@INIT' }` into dispatch. `state` is currently **undefined**, so, with
 that initial dispatch we are really calling:
 
 ```js
 changeState(undefined, { type: '@@INIT' })
 ```
 
-Because `changeState()` now has a default argument, the `state` argument is set to 
+Because `changeState()` now has a default argument, the `state` argument is set to
 `{ count: 0 }`.
 
 When `changeState()` executes, the `switch` statement executes the `default` case,
-returning the value of `state`. The code `changeState(undefined, { type: '@@INIT' })` 
-_returns_  `{ count: 0 }`, 
+returning the value of `state`. The code `changeState(undefined, { type: '@@INIT' })`
+_returns_  `{ count: 0 }`,
 
 In `dispatch()`, when the `changeState()` reducer returns, dispatch assigns the
 return value to `state`, thus updating our state to the initial value of
